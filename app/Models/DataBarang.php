@@ -14,4 +14,14 @@ class DataBarang extends Model
     {
         return $this->belongsTo(Supplier::class, 'id_supplier');
     }
+
+    public function BarangKeluar()
+    {
+        return $this->hasOne(BarangKeluar::class);
+    }
+
+    public function BarangMasuk()
+    {
+        return $this->hasOne(BarangMasuk::class);
+    }
 }

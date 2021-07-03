@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BarangKeluarController;
+use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SupplierController;
@@ -22,3 +24,5 @@ Route::get('/hapus/{id}', [HomeController::class, 'hapus']);
 Route::post('/update', [HomeController::class, 'update']);
 Route::post('/getupdate', [HomeController::class, 'getupdate']);
 Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier');
+Route::get('/barangkeluar', [BarangKeluarController::class, 'index'])->name('barangkeluar');
+Route::get('/barangmasuk', [BarangMasukController::class, 'index'])->name('barangmasuk');

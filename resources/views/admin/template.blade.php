@@ -63,8 +63,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Jenis Tabel:</h6>
-                        <a class="collapse-item" href="buttons.html">Barang Keluar</a>
-                        <a class="collapse-item" href="cards.html">Barang Masuk</a>
+                        <a class="collapse-item" href="{{ route('barangkeluar') }}">Barang Keluar</a>
+                        <a class="collapse-item" href="{{ route('barangmasuk') }}">Barang Masuk</a>
                         <a class="collapse-item" href="{{ route('supplier') }}">Supplier</a>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                 </nav>
                 <!-- End of Topbar -->
                 <div class="container-fluid">
-                    <h1 class="display-4 text-dark">@yield('judul')</h1>
+                    <h1 class="display-4 text-dark text-center">@yield('judul')</h1>
                     @yield('konten')
                 </div>
             </div>

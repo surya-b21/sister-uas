@@ -47,13 +47,6 @@ class CreateTblDataTable extends Migration
             $table->text('catatan');
             $table->timestamps();
         });
-
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('username');
-            $table->string('password');
-            $table->timestamps();
-        });
     }
 
     /**

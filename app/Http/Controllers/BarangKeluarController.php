@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class BarangKeluarController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $judul = "Barang Keluar";

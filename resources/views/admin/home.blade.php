@@ -82,7 +82,7 @@
                         @csrf
                         <div class="form-group">
                             <label>Nama :</label>
-                            <input type="text" class="form-control" name="nama_barang" id="nama_barang">
+                            <input type="text" class="form-control tambah" name="nama_barang" id="nama_barang">
                         </div>
                         <div class="pesan-nama-brg"></div>
                         <div class="form-group">
@@ -96,15 +96,14 @@
                         </div>
                         <div class="form-group">
                             <label>Stok : </label>
-                            <input type="number" class="form-control" name="stok" id="stok">
+                            <input type="text" class="form-control tambah" name="stok" id="stok">
                             <input type="hidden" name="id" id="id">
                         </div>
                         <div class="pesan-stok-brg"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary allowed-submit" id="submit-btn"
-                        disabled="disabled">Submit</button>
+                    <button type="submit" class="btn btn-primary allowed-submit" id="create-btn" disabled>Submit</button>
                     </form>
                 </div>
             </div>

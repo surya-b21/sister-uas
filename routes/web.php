@@ -5,7 +5,10 @@ use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SupplierController;
+use App\Models\BarangKeluar;
+use App\Models\BarangMasuk;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +26,20 @@ Route::post('/submit', [HomeController::class, 'submit'])->name('create');
 Route::get('/hapus/{id}', [HomeController::class, 'hapus']);
 Route::post('/update', [HomeController::class, 'update']);
 Route::post('/getupdate', [HomeController::class, 'getupdate']);
-Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier');
-Route::get('/barangkeluar', [BarangKeluarController::class, 'index'])->name('barangkeluar');
-Route::get('/barangmasuk', [BarangMasukController::class, 'index'])->name('barangmasuk');
+Route::prefix('supplier')->name('supplier.')->group(function() {
+    Route::get('/', [SupplierController::class, 'index']);
+    Route::post('/submit', [SupplierController::class, 'create'])->name('create');
+    Route::get('/hapus/{id}',[SupplierController::class, 'hapus']);
+    Route::post('/getupdate',[SupplierController::class, 'getupdate']);
+});
+Route::prefix('barangkeluar')->name('barangkeluar.')->group(function() {
+    Route::get('/', [BarangKeluarController::class, 'index']);
+    Route::post('barangkeluar/submit', [BarangKeluarController::class, 'create'])->name('create');
+});
+Route::prefix('barangmasuk')->name('barangmasuk.')->group(function(){
+    Route::get('/', [BarangMasukController::class, 'index']);
+    Route::post('/submit', [BarangMasukController::class, 'create'])->name('create');
+});
 
 Auth::routes();
 

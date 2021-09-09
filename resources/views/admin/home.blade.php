@@ -1,6 +1,7 @@
 @extends('admin.template')
 {{-- @section('judul', 'Tabel Barang') --}}
 @section('konten')
+<script src="{{ asset('assets/js/script.js') }}"></script>
     @if ($pesan = Session::get('sukses'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ $pesan }}

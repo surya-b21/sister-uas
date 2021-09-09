@@ -46,12 +46,15 @@ $(function() {
            }
      });
 
-     $('.editData').on('click', function() {
+    $('.editData').on('click', function() {
         $('#tambahDataLabel').html('Edit Data Barang');
         $('.modal-footer button[type=submit]').html('Ubah Data');
         $('.modal-footer button[type=submit]').attr('id','edit-btn');
+        $('.modal-footer button[type=submit]').removeClass('allowed-submit');
+        $('.modal-footer button[type=submit]').removeAttr('disabled');
         $('.modal-body form').attr('action', 'update');
         $('.modal-body form').attr('id', 'formEdit');
+        $('.modal-body form').attr('onsubmit','return confirm("Apakah anda yakin data sudah benar ?")');
         $('.tambah').attr('class','form-control edit');
 
         const id = $(this).data('id');
@@ -74,17 +77,4 @@ $(function() {
             }
         });
     });
-
-    $('.edit').on('input',function(e){
-        if($('#formEdit').find('.is-valid').length>=1){
-            $('#edit-btn').removeClass('allowed-submit');
-            $('#edit-btn').removeAttr('disabled');
-            console.log('sukses');
-        }
-       else{
-            e.preventDefault();
-            $('#edit-btn').attr('disabled');
-           }
-     });
-
 });

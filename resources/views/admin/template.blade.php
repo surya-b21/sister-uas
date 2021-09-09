@@ -24,11 +24,21 @@
 
 </head>
 
+ <!-- Bootstrap core JavaScript-->
+ <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+ <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+ <!-- Core plugin JavaScript-->
+ <script src="{{ asset('assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+ <!-- Custom scripts for all pages-->
+ <script src="{{ asset('assets/js/sb-admin-2.min.js') }}"></script>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+        @include('sweetalert::alert')
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -63,9 +73,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Jenis Tabel:</h6>
-                        <a class="collapse-item" href="{{ route('barangkeluar') }}">Barang Keluar</a>
-                        <a class="collapse-item" href="{{ route('barangmasuk') }}">Barang Masuk</a>
-                        <a class="collapse-item" href="{{ route('supplier') }}">Supplier</a>
+                        <a class="collapse-item" href="{{ url('/barangkeluar') }}">Barang Keluar</a>
+                        <a class="collapse-item" href="{{ url('/barangmasuk') }}">Barang Masuk</a>
+                        <a class="collapse-item" href="{{ url('/supplier') }}">Supplier</a>
                     </div>
                 </div>
             </li>

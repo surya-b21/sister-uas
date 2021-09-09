@@ -43,4 +43,42 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="tambahData" tabindex="-1" aria-labelledby="tambahDataLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tambahDataLabel">Tambah Data Supplier</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('barangmasuk.create') }}" method="POST" onsubmit="return confirm('Apakah anda yakin data sudah benar ?')">
+                        @csrf
+                        <div class="form-group">
+                            <label>Nama :</label>
+                            <input type="text" class="form-control tambah" name="nama_supplier" id="nama_supplier">
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal Keluar :</label>
+                            <input type="date" class="form-control tambah" name="nama_supplier" id="nama_supplier">
+                        </div>
+                        <div class="form-group">
+                            <label>Jumlah :</label>
+                            <input type="number" class="form-control tambah" name="nama_supplier" id="nama_supplier">
+                        </div>
+                        <div class="form-group">
+                            <label>Catatan :</label>
+                            <textarea class="form-control tambah" name="nama_supplier" id="nama_supplier"></textarea>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

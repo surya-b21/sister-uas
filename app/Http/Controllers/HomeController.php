@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DataBarang;
 use App\Models\Supplier;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
